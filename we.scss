@@ -1,0 +1,110 @@
+@import "col.scss";
+
+@mixin menandwomen {
+    width: fit-content;
+    position: absolute;
+    top: 30%;
+    text-align: center;
+    line-height: 50px;
+    background-color: transparent;
+    font-weight: bolder;
+    border-color: $buttoncolor;
+    border-bottom: 4px solid $buttoncolor;
+    border: 2px solid $buttoncolor;
+
+
+}
+
+#men {
+    right: 40%;
+    @include menandwomen()
+}
+
+
+#women {
+
+    right: 55%;
+    @include menandwomen()
+}
+
+
+
+.header {
+    width: 300px;
+    height: 165px;
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+}
+
+@keyframes example {
+    50% {
+        background-color: transparent;
+        right: 0px;
+        left: 0px;
+    }
+
+    0% {
+        left: 1200px;
+        top: 0px;
+    }
+
+}
+
+
+img {
+    height: 120%;
+    width: 100%;
+}
+
+#sear:hover {
+    transform: scale(1.5);
+}
+
+.head {
+    text-align: center;
+    background-color: $webcolor;
+    padding: 20px 20px;
+    font-style: oblique;
+
+}
+
+.seahead {
+    @extend .head;
+}
+
+.head:hover,
+.sehead:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+aside {
+    font-size: larger;
+    width: 5%;
+    padding: 100px 50px;
+    margin-left: 30px;
+    float: left;
+    background-color: $webcolor;
+}
+
+#ref:hover {
+    transform: scale(1.3);
+}
+
+footer {
+    text-align: center;
+    background-color: $webcolor;
+    padding: 30px;
+}
+
+#men:hover {
+    transform: scale(1.5);
+    border: 4px solid $buttoncolor;
+}
+
+#women:hover {
+
+    transform: scale(1.5);
+    border: 4px solid $buttoncolor;
+}

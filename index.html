@@ -1,0 +1,103 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeOriginal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="we.css">
+    <script src="script.js" defer></script>
+
+</head>
+
+<body>
+    <main>
+        <header class="head">
+            <h2>Free shipping for online orders over <i><b>$75</b></i></h2>
+        </header>
+        <header class="sehead">
+            <h3 style="text-align: center;
+            background-color: antiquewhite;padding:20px 20px;">Sign up for extra <i><b>15% </i>off on your first
+                order</b></i></h3><br>
+            <a id="ref" style="color:rgb(170, 28, 28);" href="https://www.instagram.com/">
+                <p style="text-align: center;
+                background-color: antiquewhite;padding:20px 20px;"><i>wanna follow us on instagram?</i></p>
+            </a>
+        </header>
+        <nav class="navigation">
+            <div class="header">
+                <img src="imageshw/logo.png" alt="website logo">
+            </div>
+
+            <ul class="menu">
+                <li><a href="" class="active">HOME</a></li>
+                <li><a href="">Collection</a></li>
+                <li><a href="">New Arrivals</a></li>
+                <li><a href="logform.html">Login</a></li>
+                <li><a href="signupform.html">Signup</a></li>
+            </ul>
+            <input type="search" style="height:70px;width:400px;"
+                placeholder="  Search for products,brands & more.....">
+            <button id="sear" style="height:fit-content;width: fit-content;">search</button>
+
+
+        </nav>
+    </main>
+
+
+    <div class=" bg-img">
+        <aside id="aside">
+            <p><i>you can't find it anywhere else,so why not get it here?</i></p><br>
+        </aside><br>
+
+
+
+        <div id="vi" style="display: flex;">
+            <div id="vid" style="display: inline-block;">
+                <video src="videos/women.mov" width="100%" height="1000px" controls autoplay muted loop></video>
+            </div>
+            <div style="display: inline-block;">
+                <video src="videos/men.MOV" style="position: absolute;right: 0;" width="1000px" height="1000px" controls
+                    muted autoplay loop></video>
+            </div>
+
+        </div>
+        <a href="col.html"><button type="button" id="men">Shop men's</button></a>
+        <button type="button" id="women">Shop women's</button>
+
+    </div>
+    <div><input style="position: absolute;top: 105%;left: 1.5%;;" type="file" name="file" id="file"
+            placeholder="Upload .png files here">
+        <button style="border: 2px solid black;width: 10%;position:absolute;left:1.5%;top:110%" type="submit">Wanna
+            share
+            your
+            outfit with us!</button>
+        <div id="details"></div>
+    </div>
+
+    <script>const fileInput = document.getElementById("file");
+        const details = document.getElementById("details");
+
+        fileInput.addEventListener("change", () => {
+            const file = fileInput.files[0];
+            details.innerHTML = `
+        <p>File name: ${file.name}</p>
+        <p>File size: ${file.size} bytes</p>
+      `;
+        });
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': 'f88163aa27msh64996475e4f5885p141d2djsnb61a80089396',
+                'X-RapidAPI-Host': 'aliexpress-datahub.p.rapidapi.com'
+            }
+        };
+
+        fetch('https://aliexpress-datahub.p.rapidapi.com/item_detail?itemId=3256804591426248', options)
+            .then(response => response.json())
+            .then(response => console.log(response))
+            .catch(err => console.error(err));</script>
+</body>
+
+</html>
